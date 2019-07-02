@@ -6,6 +6,9 @@
 <div class="container">
   <div class="row">
         <h3 class="center">Lista de Produtos</h3>
+    <div class="row">
+        <a class="btn green" href="{{ route('products.create') }}">Adicionar</a>
+    </div>
     <table>
        <thead>
           <tr>
@@ -44,12 +47,8 @@
             </td>
           </tr>
          @endforeach
-
        </tbody>
     </table>
-  </div>
-  <div class="row">
-  <a class="btn green" href="{{ route('products.create') }}">Adicionar</a>
   </div>
 </div>
 
