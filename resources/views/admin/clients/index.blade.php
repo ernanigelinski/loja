@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="row">
-        <h3 class="center">Lista de Clientes</h3>
+        <h3 class="center">{{$title}}</h3>
     <div class="row">
         <a class="btn green" href="{{ route('clients.create') }}">Adicionar</a>
     </div>
@@ -46,7 +46,7 @@
             <td>{{$client->email}}</td>
             <td>{{$client->ativo}}</td>
             <td>
-            <a class="btn blue" href="{{ route('clients.edit', $product->id) }}">Editar</a>
+            <a class="btn blue" href="{{ route('clients.edit', $client->id) }}">Editar</a>
             </td>
           </tr>
          @endforeach

@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Routing\MiddlewareNameResolver;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------

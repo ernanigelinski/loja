@@ -17,7 +17,8 @@ class ClientController extends Controller
     {
         $client = new Client();
         $clients = $client->all();
-        return view('admin.clients.index', compact('clients'));
+        $title = "Lista de Clientes";
+        return view('admin.clients.index', compact('clients', 'title'));
     }
 
     /**
@@ -27,7 +28,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        $title = "Cadastro de Clientes";
+        return view('admin.clients.create', compact('title'));
     }
 
     /**
@@ -38,7 +40,17 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+
+        if (isset($dados['ativo'])) {
+            $dados['ativo'] = 'sim';
+        }else {
+            $dados['ativo'] = 'nao';
+        }
+
+        Client::create($dados);
+
+        return redirect()->route('clients.index');
     }
 
     /**
@@ -60,7 +72,10 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cli = new Client();
+        $client = $cli->find($id);
+        $title = "Editando Cliente";
+        return view('admin.clients.edit', compact('client', 'title'));
     }
 
     /**
@@ -72,7 +87,17 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dados = $request->all();
+
+        if (isset($dados['ativo'])) {
+            $dados['ativo'] = 'sim';
+        }else {
+            $dados['ativo'] = 'nao';
+        }
+
+        Client::find($id)->update($dados);
+
+        return redirect()->route('clients.index');
     }
 
     /**
