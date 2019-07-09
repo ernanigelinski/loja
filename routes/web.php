@@ -21,6 +21,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
     Route::resource('clients', 'ClientController');
 });
 
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+    Route::resource('fornecedores', 'FornecedorController');
+});
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
     Route::resource('products', 'ProductController');
     /*Route::get('/products', 'ProductController@index')->name('products.index');

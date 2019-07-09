@@ -12,19 +12,19 @@
     <table>
        <thead>
           <tr>
-            <th>id</th>
+            <th>Id</th>
             <th>Nome</th>
             <th>CPF</th>
             <th>RG</th>
             <th>Data Nascimento</th>
-            <th>telefone</th>
+            <th>Telefone</th>
             <th>Endereço</th>
             <th>Numero</th>
             <th>Bairro</th>
             <th>CEP</th>
             <th>Cidade</th>
             <th>UF</th>
-            <th>email</th>
+            <th>E-mail</th>
             <th>Ativo</th>
           </tr>
        </thead>

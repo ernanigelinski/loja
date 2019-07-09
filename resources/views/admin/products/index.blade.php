@@ -5,14 +5,14 @@
 
 <div class="container">
   <div class="row">
-        <h3 class="center">Lista de Produtos</h3>
+        <h3 class="center">{{$title}}</h3>
     <div class="row">
         <a class="btn green" href="{{ route('products.create') }}">Adicionar</a>
     </div>
     <table>
        <thead>
           <tr>
-            <th>id</th>
+            <th>Id</th>
             <th>Descrição</th>
             <th>Referencia</th>
             <th>Familia</th>

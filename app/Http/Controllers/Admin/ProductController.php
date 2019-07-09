@@ -16,12 +16,14 @@ class ProductController extends Controller {
         $products = $product->all();
         //para fazer a paginação na view
         //$products = $product->paginate(10);
-        return view('admin.products.index', compact('products'));
+        $title = "Lista de Produtos";
+        return view('admin.products.index', compact('products', 'title'));
     }
 
     public function create() {
 
-        return view('admin.products.create');
+        $title = 'Cadastro de Produtos';
+        return view('admin.products.create', compact('title'));
     }
 
     public function store(Request $request) {
@@ -52,7 +54,8 @@ class ProductController extends Controller {
         //recupera o produto pelo seu id
         $prod = new Product();
         $product = $prod->find($id);
-        return view('admin.products.edit', compact('product'));
+        $title = 'Editando Produto';
+        return view('admin.products.edit', compact('product', 'title'));
     }
 
     public function update(Request $request, $id) {

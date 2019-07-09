@@ -22,6 +22,7 @@
         <li><a href="/">Welcome</a></li>
         <li><a href="{{route('products.index')}}">Produtos</a></li>
         <li><a href="{{route('clients.index')}}">Clientes</a></li>
+        <li><a href="{{route('fornecedores.index')}}">Fornecedores</a></li>
       </ul>
     </div>
   </nav>
