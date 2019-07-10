@@ -7,7 +7,7 @@
   <div class="row">
         <h3 class="center">{{$title}}</h3>
     <div class="row">
-        <a class="btn green" href="{{ route('clients.create') }}">Adicionar</a>
+        <a class="btn green" href="{{ route('clientes.create') }}">Adicionar</a>
     </div>
     <table>
        <thead>
@@ -29,24 +29,24 @@
           </tr>
        </thead>
        <tbody>
-         @foreach ($clients as $client)
+         @foreach ($clientes as $cliente)
           <tr>
-            <td>{{$client->id}}</td>
-            <td>{{$client->nome}}</td>
-            <td>{{$client->cpf}}</td>
-            <td>{{$client->rg}}</td>
-            <td>{{$client->data_nascimento}}</td>
-            <td>{{$client->telefone}}</td>
-            <td>{{$client->endereco}}</td>
-            <td>{{$client->numero}}</td>
-            <td>{{$client->bairro}}</td>
-            <td>{{$client->cep}}</td>
-            <td>{{$client->cidade}}</td>
-            <td>{{$client->uf}}</td>
-            <td>{{$client->email}}</td>
-            <td>{{$client->ativo}}</td>
+            <td>{{$cliente->id}}</td>
+            <td>{{$cliente->nome}}</td>
+            <td>{{$cliente->cpf}}</td>
+            <td>{{$cliente->rg}}</td>
+            <td>{{$cliente->data_nascimento}}</td>
+            <td>{{$cliente->telefone}}</td>
+            <td>{{$cliente->endereco}}</td>
+            <td>{{$cliente->numero}}</td>
+            <td>{{$cliente->bairro}}</td>
+            <td>{{$cliente->cep}}</td>
+            <td>{{$cliente->cidade}}</td>
+            <td>{{$cliente->uf}}</td>
+            <td>{{$cliente->email}}</td>
+            <td>{{$cliente->ativo}}</td>
             <td>
-            <a class="btn blue" href="{{ route('clients.edit', $client->id) }}">Editar</a>
+            <a class="btn blue" href="{{ route('clientes.edit', $cliente->id) }}">Editar</a>
             </td>
           </tr>
          @endforeach

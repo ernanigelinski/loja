@@ -20,16 +20,18 @@
       <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/">Welcome</a></li>
-        <li><a href="{{route('products.index')}}">Produtos</a></li>
-        <li><a href="{{route('clients.index')}}">Clientes</a></li>
+        <li><a href="{{route('produtos.index')}}">Produtos</a></li>
+        <li><a href="{{route('clientes.index')}}">Clientes</a></li>
         <li><a href="{{route('fornecedores.index')}}">Fornecedores</a></li>
+        <li><a href="{{route('compras.index')}}">Compras</a></li>
+        <li><a href="{{route('vendas.index')}}">Vendas</a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile">
         <li><a href="/">Home</a></li>
-        <li><a href="{{route('products.index')}}">Produtos</a></li>
+        <li><a href="{{route('produtos.index')}}">Produtos</a></li>
   </ul>
     </header>
 

@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Client;
+use App\Models\Admin\Compra;
 
-class ClientController extends Controller
+class CompraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,10 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $client = new Client();
-        $clients = $client->all();
-        $title = "Lista de Clientes";
-        return view('admin.clients.index', compact('clients', 'title'));
+        $compra = new Compra();
+        $compras = $compra->all();
+        $title = "Relação de Compras";
+        return view('admin.compras.index', compact('compras', 'title'));
     }
 
     /**
@@ -28,8 +28,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        $title = "Cadastro de Clientes";
-        return view('admin.clients.create', compact('title'));
+        $title = "Cadastro de Compras";
+        return view('admin.compras.create', compact('title'));
     }
 
     /**
@@ -42,15 +42,15 @@ class ClientController extends Controller
     {
         $dados = $request->all();
 
-        if (isset($dados['ativo'])) {
-            $dados['ativo'] = 'sim';
+        if (isset($dados['tipo'])) {
+            $dados['tipo'] = 'compra';
         }else {
-            $dados['ativo'] = 'nao';
+            $dados['ativo'] = 'devolucao';
         }
 
-        Client::create($dados);
+        Compra::create($dados);
 
-        return redirect()->route('clients.index');
+        return redirect()->route('compras.index');
     }
 
     /**
@@ -72,10 +72,10 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $cli = new Client();
-        $client = $cli->find($id);
-        $title = "Editando Cliente";
-        return view('admin.clients.edit', compact('client', 'title'));
+        $compra = new Cliente();
+        $compras = $compra->find($id);
+        $title = "Editando Compra";
+        return view('admin.compras.edit', compact('compras', 'title'));
     }
 
     /**
@@ -89,15 +89,15 @@ class ClientController extends Controller
     {
         $dados = $request->all();
 
-        if (isset($dados['ativo'])) {
-            $dados['ativo'] = 'sim';
+        if (isset($dados['tipo'])) {
+            $dados['tipo'] = 'compras';
         }else {
-            $dados['ativo'] = 'nao';
+            $dados['tipo'] = 'devolucao';
         }
 
-        Client::find($id)->update($dados);
+        Compra::find($id)->update($dados);
 
-        return redirect()->route('clients.index');
+        return redirect()->route('compras.index');
     }
 
     /**

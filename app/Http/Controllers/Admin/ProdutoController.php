@@ -4,26 +4,26 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Product;
+use App\Models\Admin\Produto;
 
-class ProductController extends Controller {
+class ProdutoController extends Controller {
 
 
 
     public function index(){
 
-        $product = new Product();
-        $products = $product->all();
+        $produto = new Produto();
+        $produtos = $produto->all();
         //para fazer a paginação na view
         //$products = $product->paginate(10);
         $title = "Lista de Produtos";
-        return view('admin.products.index', compact('products', 'title'));
+        return view('admin.produtos.index', compact('produtos', 'title'));
     }
 
     public function create() {
 
         $title = 'Cadastro de Produtos';
-        return view('admin.products.create', compact('title'));
+        return view('admin.produtos.create', compact('title'));
     }
 
     public function store(Request $request) {
@@ -45,17 +45,17 @@ class ProductController extends Controller {
             $dados['imagem'] = $dir."/".$nomeImagem;
         }
 
-        Product::create($dados);
+        Produto::create($dados);
 
-        return redirect()->route('products.index');
+        return redirect()->route('produtos.index');
     }
 
     public function edit($id){
         //recupera o produto pelo seu id
-        $prod = new Product();
-        $product = $prod->find($id);
+        $prod = new Produto();
+        $produto = $prod->find($id);
         $title = 'Editando Produto';
-        return view('admin.products.edit', compact('product', 'title'));
+        return view('admin.produtos.edit', compact('produto', 'title'));
     }
 
     public function update(Request $request, $id) {
@@ -70,7 +70,7 @@ class ProductController extends Controller {
         if ($request->hasFile('imagem')) {
             $imagem = $request->file('imagem');
             $num = rand(1111,9999);
-            $dir = "img/products/";
+            $dir = "img/produtos/";
             $ext = $imagem->guessClientExtension();
             $nomeImagem = "imagem_".$num.".".$ext;
             $imagem->move($dir,$nomeImagem);
@@ -79,7 +79,7 @@ class ProductController extends Controller {
 
         Product::find($id)->update($dados);
 
-        return redirect()->route('products.index');
+        return redirect()->route('produtos.index');
     }
 
     public function destroy($id){

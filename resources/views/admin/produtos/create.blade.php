@@ -6,11 +6,11 @@
 <div class="container">
     <div class="row">
         <h3 class="center">{{$title}}</h3>
-        <form action="{{route('clients.store') }}" method="POST">
+        <form action="{{route('produtos.store') }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
-        @include('admin.clients._form')
+        @include('admin.produtos._form')
         <button class="btn green" >Salvar</button>
-        <a href="{{route('clients.index')}}" class="btn btn-secondary red">Cancelar</a>
+        <a href="{{route('produtos.index')}}" class="btn btn-secondary red">Cancelar</a>
         </form>
     </div>
 </div>

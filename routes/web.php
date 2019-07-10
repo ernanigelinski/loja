@@ -18,7 +18,7 @@ Route::get('/', function() {
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
-    Route::resource('clients', 'ClientController');
+    Route::resource('clientes', 'ClienteController');
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
@@ -26,7 +26,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
-    Route::resource('products', 'ProductController');
+    Route::resource('produtos', 'ProdutoController');
+});
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+    Route::resource('compras', 'CompraController');
+});
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+    Route::resource('vendas', 'VendaController');
 });
 
 

@@ -4,7 +4,7 @@ namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Cliente extends Model
 {
     protected $fillable = [
         'nome',
