@@ -24,4 +24,8 @@ class Fornecedor extends Model
         'email',
         'ativo',
     ];
+
+    public function produtos(){
+        return $this->hasMany(Produto::class);
+    }
 }

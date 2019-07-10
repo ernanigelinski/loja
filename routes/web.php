@@ -27,11 +27,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
     Route::resource('products', 'ProductController');
-    /*Route::get('/products', 'ProductController@index')->name('products.index');
-    Route::get('/products/edit/{id}', 'ProductController@edit')->name('products.edit');
-    Route::get('/products/create', 'ProductController@create')->name('products.create');
-    Route::post('/products', 'ProductController@store')->name('products.store');
-    Route::put('/products/update/{id}', 'ProductController@update')->name('products.update');
-    Route::get('/products/destroy', 'ProductController@destroy')->name('products.destroy');*/
 });
+
 

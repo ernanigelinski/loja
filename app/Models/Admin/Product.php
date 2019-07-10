@@ -19,4 +19,8 @@ class Product extends Model{
             'ativo',
             'imagem',
         ];
+
+        public function fornecedores(){
+            return $this->belongsToMany(Fornecedor::class);
+        }
 }
