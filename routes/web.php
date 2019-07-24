@@ -14,27 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function() {
-    return view('welcome');
+    return view('/site/index');
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
-    Route::resource('clientes', 'ClienteController');
+    Route::resource('clients', 'ClientController');
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
-    Route::resource('fornecedores', 'FornecedorController');
+    Route::resource('providers', 'ProviderController');
+});
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::resource('categories', 'CategoryController');
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
-    Route::resource('produtos', 'ProdutoController');
+    Route::resource('products', 'ProductController');
 });
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
-    Route::resource('compras', 'CompraController');
-});
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
-    Route::resource('vendas', 'VendaController');
-});
 
 

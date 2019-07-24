@@ -18,15 +18,15 @@ class CreateProductsTable extends Migration
             $table->string('descricao');
             $table->string('referencia');
             $table->string('imagem');
-            $table->string('familia');
-            $table->string('grupo');
-            $table->string('subgrupo');
             $table->string('unidade');
             $table->integer('ncm');
-            $table->decimal('custo',5,2);
-            $table->decimal('preco',5,2);
+            $table->string('ean');
+            $table->decimal('custo',8,2);
+            $table->decimal('preco',8,2);
             $table->enum('ativo', ['sim', 'nao'])->default('sim');
             $table->timestamps();
+
+            $table->unsignedBigInteger('category_id');
         });
     }
 
@@ -37,6 +37,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('produtos');
     }
 }
