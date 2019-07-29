@@ -18,8 +18,8 @@
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>RG</th>
-                        <th>Data Nascimento</th>
                         <th>Telefone</th>
+                        <th>Celular</th>
                         <th>Endereço</th>
                         <th>Numero</th>
                         <th>Bairro</th>
@@ -37,8 +37,8 @@
                         <td>{{$client->nome}}</td>
                         <td>{{$client->cpf}}</td>
                         <td>{{$client->rg}}</td>
-                        <td>{{$client->data_nascimento}}</td>
                         <td>{{$client->telefone}}</td>
+                        <td>{{$client->celular}}</td>
                         <td>{{$client->endereco}}</td>
                         <td>{{$client->numero}}</td>
                         <td>{{$client->bairro}}</td>

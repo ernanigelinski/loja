@@ -7,22 +7,22 @@
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">CNPJ:</label>
-        <input type="text" class="form-control" name='cnpj' id="textinput" placeholder="CNPJ"  value="{{isset($provider->cnpj) ? $provider->cnpj : ''}}" required>
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" class="form-control" name='cnpj' id="cnpj" placeholder="00.000.000/0000-00" value="{{isset($provider->cnpj) ? $provider->cnpj : ''}}" required>
     </div>
 </div>
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">IE:</label>
-        <input type="text" class="form-control" name='ie' id="textinput" placeholder="Inscrição Estadual"  value="{{isset($provider->ie) ? $provider->ie : ''}}" required>
+        <label for="ie">IE:</label>
+        <input type="text" class="form-control" name='ie' id="ie" placeholder="Inscrição Estadual"  value="{{isset($provider->ie) ? $provider->ie : ''}}" required>
     </div>
 </div>
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">CEP:</label>
-        <input type="text" class="form-control" name='cep' id="textinput" placeholder="CEP"  value="{{isset($provider->cep) ? $provider->cep : ''}}" required>
+        <label for="cep">CEP:</label>
+        <input type="text" class="form-control" name='cep' id="cep" placeholder="CEP"  value="{{isset($provider->cep) ? $provider->cep : ''}}" required>
     </div>
 </div>
 
@@ -63,22 +63,22 @@
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">Telefone:</label>
-        <input type="text" class="form-control" name='telefone' id="textinput" placeholder="Telefone"  value="{{isset($provider->telefone) ? $provider->telefone : ''}}" required>
+        <label for="telefone">Telefone:</label>
+        <input type="text" class="form-control" name='telefone' id="telefone" placeholder="(99)9999-9999"  value="{{isset($provider->telefone) ? $provider->telefone : ''}}" required>
     </div>
 </div>
 
 <div class="box-body">
         <div class="form-group">
-            <label for="textinput">WhatsApp:</label>
-            <input type="text" class="form-control" name='whatsApp' id="textinput" placeholder="WhatsApp"  value="{{isset($provider->whatsapp) ? $provider->whatsapp : ''}}" required>
+            <label for="celular">Celular:</label>
+            <input type="text" class="form-control" name='celular' id="celular" placeholder="(99)99999-9999"  value="{{isset($provider->whatsapp) ? $provider->whatsapp : ''}}" required>
         </div>
     </div>
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">E-mail</label>
-        <input type="email" class="form-control" email='email' id="textinput" placeholder="E-mail"  value="{{isset($provider->email) ? $provider->email : ''}}" required>
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail"  value="{{isset($provider->email) ? $provider->email : ''}}" required>
     </div>
 </div>
 

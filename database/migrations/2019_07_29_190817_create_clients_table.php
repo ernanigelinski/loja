@@ -24,9 +24,9 @@ class CreateClientsTable extends Migration
             $table->string('bairro');
             $table->string('cidade');
             $table->string('uf');
-            $table->integer('telefone');
-            $table->integer('whatsapp');
-            $table->string('email');
+            $table->string('telefone');
+            $table->string('celular');
+            $table->string('email')->nullable();
             $table->enum('ativo', ['sim', 'nao'])->default('sim');
             $table->timestamps();
         });

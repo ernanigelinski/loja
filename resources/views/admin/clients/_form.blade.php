@@ -7,29 +7,22 @@
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">CPF:</label>
-        <input type="text" class="form-control" name='cpf' id="textinput" placeholder="CPF"  value="{{isset($client->cpf) ? $client->cpf : ''}}" required>
+        <label for="cpf">CPF:</label>
+        <input type="text" class="form-control" name='cpf' id="cpf" placeholder="CPF"  value="{{isset($client->cpf) ? $client->cpf : ''}}" required>
     </div>
 </div>
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">RG:</label>
-        <input type="text" class="form-control" name='rg' id="textinput" placeholder="RG"  value="{{isset($client->rg) ? $client->rg : ''}}" required>
+        <label for="rg">RG:</label>
+        <input type="text" class="form-control" name='rg' id="rg" placeholder="RG"  value="{{isset($client->rg) ? $client->rg : ''}}" required>
     </div>
 </div>
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">Data De Nascimento:</label>
-        <input type="text" class="form-control" name='data_de_nascimento' id="textinput" placeholder="Data de Nascimento"  value="{{isset($client->data_nascimento) ? $client->data_nascimento : ''}}" required>
-    </div>
-</div>
-
-<div class="box-body">
-    <div class="form-group">
-        <label for="textinput">CEP:</label>
-        <input type="text" class="form-control" name='cep' id="textinput" placeholder="CEP"  value="{{isset($client->cep) ? $client->cep : ''}}" required>
+        <label for="cep">CEP:</label>
+        <input type="text" class="form-control" name='cep' id="cep" placeholder="CEP"  value="{{isset($client->cep) ? $client->cep : ''}}" required>
     </div>
 </div>
 
@@ -70,27 +63,27 @@
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">Telefone:</label>
-        <input type="text" class="form-control" name='telefone' id="textinput" placeholder="Telefone"  value="{{isset($client->telefone) ? $client->telefone : ''}}" required>
+        <label for="telefone">Telefone:</label>
+        <input type="text" class="form-control" name='telefone' id="telefone" placeholder="(99)9999-9999" value="{{isset($client->telefone) ? $client->telefone : ''}}" required>
     </div>
 </div>
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">WhatsApp:</label>
-        <input type="text" class="form-control" name='whatsapp' id="textinput" placeholder="WhatsApp"  value="{{isset($client->whatsapp) ? $client->whatsapp : ''}}" required>
+        <label for="celular">Celular:</label>
+        <input type="text" class="form-control" name='celular' id="celular" placeholder="(99)99999-9999" value="{{isset($client->celular) ? $client->celular : ''}}" required>
     </div>
 </div>
 
 <div class="box-body">
     <div class="form-group">
-        <label for="textinput">E-mail</label>
-        <input type="email" class="form-control" email='email' id="textinput" placeholder="E-mail"  value="{{isset($client->email) ? $client->email : ''}}" required>
+        <label for="email">E-mail</label>
+        <input type="text" class="form-control" name="email" id="email" placeholder="E-mail"  value="{{isset($client->email) ? $client->email : ''}}" required>
     </div>
 </div>
 
 <div class="form-check">
-    <input type="checkbox" class="filled-in"  id="ativo" {{isset($client->ativo) && $client->ativo == 'sim' ? 'checked' : ''}} value="true"/>
+    <input type="checkbox" class="filled-in" name="ativo" id="ativo" {{isset($client->ativo) && $client->ativo == 'sim' ? 'checked' : ''}} value="true"/>
     <label class="form-check-label" for="ativo">
     Cliente Ativo?
     </label>

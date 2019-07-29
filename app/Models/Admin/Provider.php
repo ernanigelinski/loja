@@ -20,7 +20,7 @@ class Provider extends Model
         'cidade',
         'uf',
         'telefone',
-        'whatsapp',
+        'celular',
         'email',
         'ativo',
     ];

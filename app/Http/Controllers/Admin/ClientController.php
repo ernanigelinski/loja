@@ -72,8 +72,7 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $client = new Client();
-        $clients = $client->find($id);
+        $client = Client::find($id);
         $title = "Editando Cliente";
         return view('admin.clients.edit', compact('client', 'title'));
     }

@@ -43,7 +43,6 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $dados = $request->all();
-        $category = new Category();
         Category::create($dados);
         /**$insert = $categoria->create($dados);
         if($insert){
@@ -73,10 +72,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = new Category();
-        $categories = $category->find($id);
-        //$title = "Editando Categoria";
-        return view('admin.categories.edit', compact('category'));
+        $category = Category::find($id);
+        $title = "Editando Categoria";
+        return view('admin.categories.edit', compact('category', 'title'));
     }
 
     /**
@@ -86,7 +84,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $id)
+    public function update(Request $request, $id)
     {
         $dados = $request->all();
         Category::find($id)->update($dados);

@@ -10,7 +10,6 @@ class Client extends Model
         'nome',
         'cpf',
         'rg',
-        'data_nascimento',
         'cep',
         'endereco',
         'numero',
@@ -18,6 +17,7 @@ class Client extends Model
         'cidade',
         'uf',
         'telefone',
+        'celular',
         'email',
         'ativo',
     ];

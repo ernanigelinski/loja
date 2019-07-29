@@ -17,6 +17,7 @@
             <th>Referencia</th>
             <th>Unidade</th>
             <th>NCM</th>
+            <th>EAN</th>
             <th>Custo</th>
             <th>Preço</th>
             <th>Ativo</th>
@@ -31,12 +32,13 @@
             <td>{{$product->referencia}}</td>
             <td>{{$product->unidade}}</td>
             <td>{{$product->ncm}}</td>
+            <td>{{$product->ean}}</td>
             <td>{{$product->custo}}</td>
             <td>{{$product->preco}}</td>
             <td>{{$product->ativo}}</td>
             <td><img height="60" src="{{asset($product->imagem)}}" alt=""/></td>
             <td>
-            <a class="btn blue" href="{{ route('products.edit', $product->id) }}">Editar</a>
+            <a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">Editar</a>
             </td>
           </tr>
          @endforeach

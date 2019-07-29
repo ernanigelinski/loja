@@ -72,10 +72,9 @@ class ProviderController extends Controller
      */
     public function edit($id)
     {
-        $provider = new Provider();
-        $providers = $provider->find($id);
+        $provider = Provider::find($id);
         $title = "Editando Fornecedor";
-        return view('admin.providers.edit', compact('providers', 'title'));
+        return view('admin.providers.edit', compact('provider', 'title'));
     }
 
     /**

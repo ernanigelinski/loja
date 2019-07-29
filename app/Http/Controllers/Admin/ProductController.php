@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Product;
+use App\Models\Admin\Category;
 
 class ProductController extends Controller {
 
@@ -21,20 +22,20 @@ class ProductController extends Controller {
     }
 
     public function create() {
-
+        $categories = Category::all();
         $title = 'Cadastro de Produtos';
-        return view('admin.products.create', compact('title'));
+        return view('admin.products.create', compact('title', 'categories'));
     }
 
     public function store(Request $request) {
         $dados = $request->all();
-
+        //Verifica se o produto está ativo
         if (isset($dados['ativo'])) {
             $dados['ativo'] = 'sim';
         }else {
             $dados['ativo'] = 'nao';
         }
-
+        //salva o caminho da imagem do produto
         if ($request->hasFile('imagem')) {
             $imagem = $request->file('imagem');
             $num = rand(1111,9999);
@@ -51,11 +52,11 @@ class ProductController extends Controller {
     }
 
     public function edit($id){
-        //recupera o produto pelo seu id
-        $product = new Product();
-        $products = $product->find($id);
+        //edita o produto pelo seu id
+        $product = Product::find($id);
+        $categories = Category::all();
         $title = 'Editando Produto';
-        return view('admin.products.edit', compact('products', 'title'));
+        return view('admin.products.edit', compact('product', 'categories', 'title'));
     }
 
     public function update(Request $request, $id) {

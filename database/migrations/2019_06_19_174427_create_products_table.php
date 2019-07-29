@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('descricao');
             $table->string('referencia');
-            $table->string('imagem');
+            $table->string('imagem')->nullable($value = true);
             $table->string('unidade');
             $table->integer('ncm');
             $table->string('ean');

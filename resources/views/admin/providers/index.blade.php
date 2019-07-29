@@ -19,8 +19,8 @@
                         <th>Nome</th>
                         <th>CNPJ</th>
                         <th>IE</th>
-                        <th>WhatsApp</th>
                         <th>Telefone</th>
+                        <th>Celular</th>
                         <th>Endereço</th>
                         <th>Numero</th>
                         <th>Bairro</th>
@@ -36,9 +36,10 @@
                 <tr>
                     <td>{{$provider->id}}</td>
                     <td>{{$provider->nome}}</td>
+                    <td>{{$provider->cnpj}}</td>
                     <td>{{$provider->ie}}</td>
-                    <td>{{$provider->whatsapp}}</td>
                     <td>{{$provider->telefone}}</td>
+                    <td>{{$provider->celular}}</td>
                     <td>{{$provider->endereco}}</td>
                     <td>{{$provider->numero}}</td>
                     <td>{{$provider->bairro}}</td>
