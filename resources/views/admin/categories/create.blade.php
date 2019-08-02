@@ -1,6 +1,11 @@
 @extends('templates.layout')
 
 @section('content')
+
+@if (!empty($mensagem))
+<div class="alert alert-success">{{$mensagem}}}</div>
+@endif
+
 <div class="container">
     <div class="row">
         <h3 class="col">{{$title}}</h3>

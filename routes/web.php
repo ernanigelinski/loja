@@ -2,6 +2,7 @@
 use Illuminate\Routing\MiddlewareNameResolver;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,8 +27,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::post('categories/index', 'CategoryController@search')->name('categories.search');
     Route::resource('categories', 'CategoryController');
 });
+
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
     Route::resource('products', 'ProductController');

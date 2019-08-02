@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Category;
@@ -21,6 +22,15 @@ class CategoryController extends Controller
         return view('admin.categories.index', compact('categories', 'title'));
         }
 
+        /**Pesquisar categoria */
+    public function search(Request $request)
+    {
+        $title = "Lista de Categorias";
+        $pesquisa = Input::get('pesquisa');
+        $categories = Category::search($request->pesquisa);
+        return view('admin.categories.index', compact('categories', 'title'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -31,6 +41,7 @@ class CategoryController extends Controller
         $title = "Cadastro de Categorias";
         $category = new Category();
         $title = "Criar Categoria";
+        $mensagem = "Categoria incluída com sucesso!";
         return view('admin.categories.create', compact('category', 'title'));
     }
 
@@ -74,7 +85,8 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $title = "Editando Categoria";
-        return view('admin.categories.edit', compact('category', 'title'));
+        $mensagem = "Categoria alterada com sucesso!";
+        return view('admin.categories.edit', compact('category', 'title', 'mensagem'));
     }
 
     /**
